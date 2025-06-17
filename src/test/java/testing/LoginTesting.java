@@ -1,5 +1,6 @@
 package testing;
 
+import org.example.base.page.HomePage;
 import org.example.base.page.LoginPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -7,11 +8,13 @@ import setup.BaseSetup;
 
 public class LoginTesting extends BaseSetup {
 
-    private final String validUsername = "standard_user";
-    private final String validPassword = "secret_sauce";
+    public final String validUsername = "standard_user";
+    public final String validPassword = "secret_sauce";
 
     private final String invalidUsername = "invalidusername";
     private final String invalidPassword = "invalidpassword";
+
+    public static HomePage homePage;
 
 
     @Test(priority = 1)
@@ -50,6 +53,7 @@ public class LoginTesting extends BaseSetup {
     public void loginUsingValidCredential(){
         loginPage.setInputUsername(validUsername);
         loginPage.setInputPassword(validPassword);
-        loginPage.clickButtonLogin();
+        homePage = loginPage.clickButtonLogin();
+        Assert.assertEquals(homePage.getTextProduct(), "Products");
     }
 }

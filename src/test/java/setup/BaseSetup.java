@@ -26,6 +26,7 @@ public class BaseSetup {
 
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
+        options.addArguments("--guest"); // Jalankan Chrome dalam Guest Mode
         //instance driver as chrome driver;
         driver = new ChromeDriver(options);
 
