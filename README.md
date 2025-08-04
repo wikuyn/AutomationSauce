@@ -1,6 +1,6 @@
 # Automation Testing Portfolio - Website https://www.saucedemo.com
 
-This is my personal project for automation testing. In this case i create automate for website saucedemo.com, this automation created by selenium, java as a programming lag. Tujuannya adalah untuk melakukan pengujian end-to-end testing secara otomatis.
+This is my personal project for automation end to end testing. In this case i create automate for website saucedemo.com, this automation created by selenium, java as a programming language, and allure report for testing reporting tools.
 
 ## Teknologi & Tools
 - Java 20
@@ -10,14 +10,14 @@ This is my personal project for automation testing. In this case i create automa
 - Allure Report
 - Git & GitHub
 
-## Test Case yang Diotomasi
+## Test Case Automated
 - ✅ Login valid & invalid
 - ✅ Navigate to product detail page
 - ✅ Add product to cart
 - ✅ Checkout product
 
 ## Future Improvement
-- Integrasi ke GitHub Actions
+- Integared to the GitHub Actions
 - Parallel testing
 
 
