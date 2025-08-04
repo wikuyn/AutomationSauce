@@ -1,6 +1,7 @@
 package org.example.base.page;
 
 import io.qameta.allure.Step;
+import org.example.base.page.helper.WaitElement;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -21,8 +22,7 @@ public class HomePage {
 
     @Step("Navigate to home page")
     public String getTextProduct(){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(textProduct));
+        WaitElement.waitForElementToBeVisible(driver, textProduct);
         return driver.findElement(textProduct).getText();
     }
 

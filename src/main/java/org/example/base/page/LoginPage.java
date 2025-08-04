@@ -1,6 +1,7 @@
 package org.example.base.page;
 
 import io.qameta.allure.Step;
+import org.example.base.page.helper.WaitElement;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -23,15 +24,13 @@ public class LoginPage {
 
     @Step("Input username: {username}")
     public void setInputUsername(String username){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(inputUsername));
+        WaitElement.waitForElementToBeVisible(driver, inputUsername);
         driver.findElement(inputUsername).sendKeys(username);
     }
 
     @Step("Input password: {password}")
     public void setInputPassword(String password){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(inputPassword));
+        WaitElement.waitForElementToBeVisible(driver, inputPassword);
         driver.findElement(inputPassword).sendKeys(password);
     }
 
@@ -43,8 +42,7 @@ public class LoginPage {
 
     @Step("Get error message from popup")
     public String getErrorMessage() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(popupError));
+        WaitElement.waitForElementToBeVisible(driver, popupError);
         return driver.findElement(popupError).getText();
     }
 }

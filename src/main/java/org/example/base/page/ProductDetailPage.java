@@ -1,5 +1,6 @@
 package org.example.base.page;
 
+import org.example.base.page.helper.WaitElement;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -12,20 +13,33 @@ public class ProductDetailPage {
 
     private By productDetailName = By.cssSelector("[data-test='inventory-item-name']");
     private By buttonAddToCart = By.name("add-to-cart");
+    private By badgesCart = By.className("shopping_cart_badge");
+    private By buttonCart = By.id("shopping_cart_container");
 
     public ProductDetailPage(WebDriver driver) {
         this.driver = driver;
     }
 
     public String getProductDetailName(){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(productDetailName));
+        WaitElement.waitForElementToBeVisible(driver, productDetailName);
         return driver.findElement(productDetailName).getText();
     }
 
     public void clickButtonAddToCart(){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(buttonAddToCart));
+        WaitElement.waitForElementToBeVisible(driver, buttonAddToCart);
         driver.findElement(buttonAddToCart).click();
+    }
+
+    public String getBadgesQuantity(){
+        WaitElement.waitForElementToBeVisible(driver,badgesCart);
+
+        return driver.findElement(badgesCart).getText();
+    }
+
+    public CartPage clickButtonCart(){
+        WaitElement.waitForElementToBeVisible(driver,buttonCart);
+
+        driver.findElement(buttonCart).click();
+        return new CartPage(driver);
     }
 }
