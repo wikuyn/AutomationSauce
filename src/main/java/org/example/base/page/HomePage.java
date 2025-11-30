@@ -1,5 +1,6 @@
 package org.example.base.page;
 
+import io.qameta.allure.Allure;
 import io.qameta.allure.Step;
 import org.example.base.page.helper.WaitElement;
 import org.openqa.selenium.By;
@@ -20,14 +21,14 @@ public class HomePage {
         this.driver = driver;
     }
 
-    @Step("Navigate to home page")
     public String getTextProduct(){
+        Allure.step("The user navigate to the homepage");
         WaitElement.waitForElementToBeVisible(driver, textProduct);
         return driver.findElement(textProduct).getText();
     }
 
-    @Step("Click product: {product}")
     public ProductDetailPage clickProduct(String product){
+        Allure.step("The user click product "+product);
         /*
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         List<WebElement> elements = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(elementProductName));

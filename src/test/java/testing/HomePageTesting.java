@@ -1,6 +1,9 @@
 package testing;
 
 import io.qameta.allure.Description;
+import io.qameta.allure.Owner;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.testng.Tag;
 import org.example.base.page.CartPage;
 import org.example.base.page.CheckoutPage;
@@ -32,6 +35,8 @@ public class HomePageTesting extends LoginTesting{
 
     @Test(priority = 6)
     @Tag("Positive Case")
+    @Owner("Wiku Yoga Ndaru")
+    @Severity(SeverityLevel.CRITICAL)
     public void addProductToCart(){
         loginPage.setInputUsername(validUsername);
         loginPage.setInputPassword(validPassword);

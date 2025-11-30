@@ -1,6 +1,6 @@
 package testing;
 
-import io.qameta.allure.Description;
+import io.qameta.allure.*;
 import io.qameta.allure.testng.Tag;
 import org.example.base.page.HomePage;
 import org.example.base.page.LoginPage;
@@ -21,6 +21,8 @@ public class LoginTesting extends BaseSetup {
 
     @Test(priority = 1)
     @Tag("Negative Case")
+    @Owner("Wiku Yoga Ndaru")
+    @Severity(SeverityLevel.CRITICAL)
     @Description("Given The user want to checkout product in saucedemo\n" +
             "And the user navigate to the login page\n" +
             "When the user input empty username and password\n"+

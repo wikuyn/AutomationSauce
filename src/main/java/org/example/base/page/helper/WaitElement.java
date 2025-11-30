@@ -11,7 +11,6 @@ import java.time.Duration;
 
 public class WaitElement {
 
-
     public static void waitForElementToBeVisible(WebDriver driver, By locator) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator));

@@ -1,5 +1,6 @@
 package org.example.base.page;
 
+import io.qameta.allure.Allure;
 import io.qameta.allure.Step;
 import org.example.base.page.helper.WaitElement;
 import org.openqa.selenium.By;
@@ -22,20 +23,22 @@ public class LoginPage {
         this.driver = driver;
     }
 
-    @Step("Input username: {username}")
     public void setInputUsername(String username){
+        Allure.step("The user input username "+username);
         WaitElement.waitForElementToBeVisible(driver, inputUsername);
         driver.findElement(inputUsername).sendKeys(username);
     }
 
     @Step("Input password: {password}")
     public void setInputPassword(String password){
+        Allure.step("The user input password "+password);
         WaitElement.waitForElementToBeVisible(driver, inputPassword);
         driver.findElement(inputPassword).sendKeys(password);
     }
 
     @Step("Click login button")
     public HomePage clickButtonLogin(){
+        Allure.step("The user click button login");
         driver.findElement(btnLogin).click();
         return new HomePage(driver);
     }
@@ -43,6 +46,7 @@ public class LoginPage {
     @Step("Get error message from popup")
     public String getErrorMessage() {
         WaitElement.waitForElementToBeVisible(driver, popupError);
+        Allure.step("The user can see error message "+popupError);
         return driver.findElement(popupError).getText();
     }
 }

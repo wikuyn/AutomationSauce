@@ -60,6 +60,7 @@ public class CheckoutPageTesting extends HomePageTesting{
         checkoutPage.clickButtonContinueCheckout();
         Assert.assertEquals(checkoutPage.getTextError(), "Error: Last Name is required");
     }
+
     @Test(priority = 10)
     @Tag("Negative Case")
     public void inputCheckoutFormEmptyPostal(){

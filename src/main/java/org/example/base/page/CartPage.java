@@ -1,5 +1,6 @@
 package org.example.base.page;
 
+import io.qameta.allure.Allure;
 import org.example.base.page.helper.WaitElement;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -33,11 +34,14 @@ public class CartPage{
     }
 
     public void clickButtonRemove(){
+
+        Allure.step("The user click button remove");
         WaitElement.waitForElementToBeVisible(driver, btnRemoveProduct);
         driver.findElement(btnRemoveProduct).click();
     }
 
     public CheckoutPage clickButtonCheckout(){
+        Allure.step("The user click button checkout");
         WaitElement.waitForElementToBeVisible(driver, btnCheckout);
         driver.findElement(btnCheckout).click();
         return new CheckoutPage(driver);
