@@ -8,15 +8,15 @@ pipeline {
     stages {
         stage('Run Selenium Tests with Docker') {
             steps {
-                sh 'docker compose down || true'
-                sh 'docker compose up --build --abort-on-container-exit'
+                sh 'docker-compose down || true'
+                sh 'docker-compose up --build'
             }
         }
     }
 
     post {
         always {
-            sh 'docker compose down || true'
+            sh 'docker-compose down || true'
         }
     }
 }
