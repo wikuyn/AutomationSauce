@@ -1,0 +1,19 @@
+FROM jenkins/jenkins:lts-jdk21
+
+USER root
+
+# Install docker cli
+RUN apt-get update && apt-get install -y \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release
+
+RUN mkdir -m 0755 -p /etc/apt/keyrings
+
+RUN curl -fsSL https://get.docker.com | sh
+
+# Allow jenkins user to run docker
+RUN usermod -aG docker jenkins
+
+USER jenkins

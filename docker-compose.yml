@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  chrome:
+    image: selenium/standalone-chrome:latest
+    ports:
+      - "4444:4444"
+    shm_size: 2gb
+
+  test:
+    image: maven:3.9.6-eclipse-temurin-21
+    depends_on:
+      - chrome
+    working_dir: /app
+    volumes:
+      - .:/app
+    command: mvn test
