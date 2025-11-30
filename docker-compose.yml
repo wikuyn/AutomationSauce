@@ -14,4 +14,6 @@ services:
     working_dir: /app
     volumes:
       - .:/app
-    command: mvn test
+    environment:
+      - SELENIUM_REMOTE_URL=http://chrome:4444/wd/hub
+    command: mvn clean test
