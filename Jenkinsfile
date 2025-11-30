@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    options {
+        skipDefaultCheckout(true)
+    }
+
     stages {
         stage('Run Selenium Tests with Docker') {
             steps {
@@ -12,7 +16,7 @@ pipeline {
 
     post {
         always {
-            sh 'docker compose down'
+            sh 'docker compose down || true'
         }
     }
 }
