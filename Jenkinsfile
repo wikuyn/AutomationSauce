@@ -1,7 +1,17 @@
 pipeline {
     agent any
 
+    options {
+        skipDefaultCheckout(true)
+    }
+
     stages {
+        stage('Checkout SCM') {
+            steps {
+                checkout scm
+            }
+        }
+
         stage('Run Selenium Tests with Docker') {
             steps {
                 dir('AutomationSauceDemo') {
@@ -14,8 +24,10 @@ pipeline {
 
     post {
         always {
-            dir('AutomationSauceDemo') {
-                sh 'docker-compose down || true'
+            node {
+                dir('AutomationSauceDemo') {
+                    sh 'docker-compose down || true'
+                }
             }
         }
     }
