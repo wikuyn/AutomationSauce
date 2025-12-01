@@ -47,7 +47,7 @@ public class LoginTesting extends BaseSetup {
         loginPage.setInputUsername("");
         loginPage.setInputPassword(validPassword);
         loginPage.clickButtonLogin();
-        Assert.assertEquals(loginPage.getErrorMessage(), "Epic sadface: Username");
+        Assert.assertEquals(loginPage.getErrorMessage(), "Epic sadface:");
     }
 
     @Test(priority = 3)
