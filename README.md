@@ -17,7 +17,7 @@ This is my personal project for automation end to end testing. In this case i cr
 - ✅ Navigate to product detail page
 - ✅ Add product to cart
 - ✅ Checkout product
-- ✅ Jenkins (local)
+- ✅ Jenkins
 
 ## Future Improvement
 - Integared to the GitHub Actions
