@@ -11,13 +11,13 @@ This is my personal project for automation end to end testing. In this case i cr
 - Maven
 - Allure Report
 - Git & GitHub
+- Jenkins
 
 ## Test Case Automated
 - ✅ Login valid & invalid
 - ✅ Navigate to product detail page
 - ✅ Add product to cart
 - ✅ Checkout product
-- ✅ Jenkins
 
 ## Future Improvement
 - Integared to the GitHub Actions
