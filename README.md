@@ -23,7 +23,13 @@ This is my personal project for automation end to end testing. In this case i cr
 - Integared to the GitHub Actions
 - Parallel testing
 
+## Running automation from Jenkins
+
+https://github.com/user-attachments/assets/6942be37-d1a5-4209-b119-8a23dffd6891
+
 ## Running automation from local devices
 
 https://github.com/user-attachments/assets/6d1142db-811e-4dd0-b7f8-2f316fa256c3
+
+
 
