@@ -1,3 +1,5 @@
+<img width="1850" height="868" alt="image" src="https://github.com/user-attachments/assets/a4b7170b-b532-487e-b732-5a8abe3c0517" />
+
 # Automation Testing Portfolio - Website https://www.saucedemo.com
 
 This is my personal project for automation end to end testing. In this case i create automate for website saucedemo.com, this automation created by selenium, java as a programming language, and allure report for testing reporting tools.
@@ -20,9 +22,6 @@ This is my personal project for automation end to end testing. In this case i cr
 ## Future Improvement
 - Integared to the GitHub Actions
 - Parallel testing
-
-<img width="1850" height="868" alt="image" src="https://github.com/user-attachments/assets/a4b7170b-b532-487e-b732-5a8abe3c0517" />
-
 
 ## Running automation from local devices
 
