@@ -21,7 +21,8 @@ This is my personal project for automation end to end testing. In this case i cr
 - Integared to the GitHub Actions
 - Parallel testing
 
+<img width="1850" height="868" alt="image" src="https://github.com/user-attachments/assets/a4b7170b-b532-487e-b732-5a8abe3c0517" />
 
-
+##Running automation from local devices
 https://github.com/user-attachments/assets/6d1142db-811e-4dd0-b7f8-2f316fa256c3
 
