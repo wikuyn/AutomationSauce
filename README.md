@@ -3,7 +3,7 @@
 This is my personal project for automation end to end testing. In this case i create automate for website saucedemo.com, this automation created by selenium, java as a programming language, and allure report for testing reporting tools.
 
 ## Teknologi & Tools
-- Java 20
+- Java 21
 - Selenium WebDriver
 - TestNG
 - Maven
@@ -15,6 +15,7 @@ This is my personal project for automation end to end testing. In this case i cr
 - ✅ Navigate to product detail page
 - ✅ Add product to cart
 - ✅ Checkout product
+- ✅ Jenkins (local)
 
 ## Future Improvement
 - Integared to the GitHub Actions
