@@ -33,7 +33,6 @@ public class BaseSetup {
         options.addArguments("--guest"); // Jalankan Chrome dalam Guest Mode
         //instance driver as chrome driver;
         driver = new ChromeDriver(options);
-        /*
 
         //setup browser to maximize
         driver.manage().window().maximize();
@@ -41,13 +40,6 @@ public class BaseSetup {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         //navigate browser to website
         driver.navigate().to(URL);
-
-         */
-
-        WebDriver driver = new RemoteWebDriver(
-                new URL("http://chrome:4444/wd/hub"),
-                options
-        );
         loginPage = new LoginPage(driver);
     }
 
