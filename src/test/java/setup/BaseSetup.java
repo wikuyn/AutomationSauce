@@ -16,6 +16,7 @@ import org.testng.annotations.BeforeMethod;
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 public class BaseSetup {
@@ -37,7 +38,7 @@ public class BaseSetup {
         //setup browser to maximize
         driver.manage().window().maximize();
         //give timeout 10 scn
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         //navigate browser to website
         driver.navigate().to(URL);
         loginPage = new LoginPage(driver);

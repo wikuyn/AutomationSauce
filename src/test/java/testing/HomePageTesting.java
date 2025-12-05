@@ -15,10 +15,9 @@ import org.testng.annotations.Test;
 public class HomePageTesting extends LoginTesting{
 
      public ProductDetailPage productDetailPage;
-     public CartPage cartPage;
      public CheckoutPage checkoutPage;
 
-    @Test(priority = 5)
+    @Test(priority = 6)
     @Tag("Positive Case")
     @Description("Given the user want to navigate to product detail page\n" +
             "And the user already successfully login\n"+
@@ -33,30 +32,27 @@ public class HomePageTesting extends LoginTesting{
         Assert.assertEquals(productDetailPage.getProductDetailName(), "Sauce Labs Bike Light");
     }
 
-    @Test(priority = 6)
+    @Test(priority = 7)
     @Tag("Positive Case")
     @Owner("Wiku Yoga Ndaru")
     @Severity(SeverityLevel.CRITICAL)
-    public void addProductToCart(){
+    public void addSingleProductToCartFromHomePage(){
         loginPage.setInputUsername(validUsername);
         loginPage.setInputPassword(validPassword);
         homePage = loginPage.clickButtonLogin();
-        productDetailPage = homePage.clickProduct("Sauce Labs Bike Light");
-        productDetailPage.clickButtonAddToCart();
-        Assert.assertEquals(productDetailPage.getBadgesQuantity(), "1");
+        homePage.getListProductAndClickAddToCart("Sauce Labs Bike Light");
+        Assert.assertEquals(homePage.getCartCount(), "1");
     }
 
-    @Test(priority = 7)
-    @Tag("Positive Case")
-    public void removeProductFromCart(){
+
+    @Test(priority = 8)
+    public void addMultipleProductToCartFromHomepage(){
         loginPage.setInputUsername(validUsername);
         loginPage.setInputPassword(validPassword);
         homePage = loginPage.clickButtonLogin();
-        productDetailPage = homePage.clickProduct("Sauce Labs Bike Light");
-        productDetailPage.clickButtonAddToCart();
-        cartPage = productDetailPage.clickButtonCart();
-        Assert.assertEquals(cartPage.getTittlePage(), "Your Cart");
-        cartPage.clickButtonRemove();
+        homePage.getListProductAndClickAddToCart("Sauce Labs Bike Light");
+        homePage.getListProductAndClickAddToCart("Sauce Labs Bolt T-Shirt");
+        Assert.assertEquals(homePage.getCartCount(), "2");
     }
 
 

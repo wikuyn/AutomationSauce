@@ -5,11 +5,11 @@ import org.example.base.page.CheckoutPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class CheckoutPageTesting extends HomePageTesting{
+public class CheckoutPageTesting extends CartPageTesting{
 
     private CheckoutPage checkoutPage;
 
-    @Test(priority = 8)
+    @Test(priority = 12)
     @Tag("Positive Case")
     public void navigateToCheckout(){
         loginPage.setInputUsername(validUsername);
@@ -23,7 +23,7 @@ public class CheckoutPageTesting extends HomePageTesting{
         Assert.assertEquals(checkoutPage.getTextCheckoutForm(), "Checkout: Your Information");
     }
 
-    @Test(priority = 8)
+    @Test(priority = 13)
     @Tag("Negative Case")
     public void inputCheckoutFormEmptyFirstName(){
         loginPage.setInputUsername(validUsername);
@@ -42,7 +42,7 @@ public class CheckoutPageTesting extends HomePageTesting{
         Assert.assertEquals(checkoutPage.getTextError(), "Error: First Name is required");
     }
 
-    @Test(priority = 9)
+    @Test(priority = 14)
     @Tag("Negative Case")
     public void inputCheckoutFormEmptyLastName(){
         loginPage.setInputUsername(validUsername);
@@ -61,7 +61,7 @@ public class CheckoutPageTesting extends HomePageTesting{
         Assert.assertEquals(checkoutPage.getTextError(), "Error: Last Name is required");
     }
 
-    @Test(priority = 10)
+    @Test(priority = 15)
     @Tag("Negative Case")
     public void inputCheckoutFormEmptyPostal(){
         loginPage.setInputUsername(validUsername);

@@ -16,6 +16,8 @@ public class HomePage {
     private WebDriver driver;
     private By textProduct = By.cssSelector("[data-test='title']");
     private By elementProductName = By.cssSelector("[data-test='inventory-item-name']");
+    private By elementProduct = By.cssSelector("[data-test='inventory-item']");
+    private By badgesCart = By.className("shopping_cart_badge");
 
     public HomePage(WebDriver driver) {
         this.driver = driver;
@@ -42,17 +44,45 @@ public class HomePage {
 
          */
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-
-        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(elementProductName));
+        WaitElement.waitForElementToBeVisible(driver, elementProduct);
         List<WebElement> elements = driver.findElements(elementProductName);
 
         for (WebElement element : elements) {
             if (element.getText().trim().equals(product)) {
-                wait.until(ExpectedConditions.elementToBeClickable(element)).click();
+                //wait.until(ExpectedConditions.elementToBeClickable(element)).click();
+                element.click();
                 break;
             }
         }
         return new ProductDetailPage(driver);
+    }
+
+    public String getListProductAndClickAddToCart(String product){
+        WaitElement.waitForElementToBeVisible(driver, elementProduct);
+        List<WebElement> elements = driver.findElements(elementProduct);
+
+        for (WebElement e: elements) {
+            String productName = e.findElement(By.className("inventory_item_name")).getText();
+
+            if (productName.equals(product)){
+                e.findElement(By.xpath(".//button[text()='Add to cart']")).click();
+
+            }
+            System.out.println(productName);
+
+        }
+        return elements.toString();
+    }
+
+    public String getCartCount(){
+        WaitElement.waitForElementToBeVisible(driver, badgesCart);
+        return driver.findElement(badgesCart).getText();
+    }
+
+    public CartPage clickButtonCart(){
+        WaitElement.waitForElementToBeVisible(driver, badgesCart);
+
+        driver.findElement(badgesCart).click();
+        return new CartPage(driver);
     }
 }

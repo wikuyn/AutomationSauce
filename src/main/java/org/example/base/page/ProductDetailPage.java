@@ -34,7 +34,6 @@ public class ProductDetailPage {
 
     public String getBadgesQuantity(){
         WaitElement.waitForElementToBeVisible(driver,badgesCart);
-
         return driver.findElement(badgesCart).getText();
     }
 

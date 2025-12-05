@@ -80,7 +80,7 @@ public class LoginTesting extends BaseSetup {
         Assert.assertEquals(loginPage.getErrorMessage(), "Epic sadface: Username and password do not match any user in this service");
     }
 
-    @Test(priority = 4)
+    @Test(priority = 5)
     @Tag("Positive Case")
     @Description("Given the user want to checkout product in saucedemo\n" +
             "When the user input valid username\n"+
