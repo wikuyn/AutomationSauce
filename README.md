@@ -6,7 +6,7 @@ This is my personal project for automation end to end testing. In this case i cr
 
 ## Teknologi & Tools
 - Java 21
-- Selenium WebDriver
+- Selenium WebDriver [in Playwright framework click here](https://github.com/wikuyn/AutomationSaucePlaywright)
 - TestNG
 - Maven
 - Allure Report
