@@ -12,6 +12,7 @@ This is my personal project for automation end to end testing. In this case i cr
 - Allure Report
 - Git & GitHub
 - Jenkins
+- POM (Page Object Model)
 
 ## Test Case Automated
 - ✅ Login valid & invalid
